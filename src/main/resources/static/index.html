@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplikacja do zarządzania wspólnotami mieszkaniowymi</title>
+</head>
+<body>
+    <h1>Panel administratora. Wybierz opcję zarządzania mieszkaniami.</h1>
+    <form method="post" action="/buildings/create-building">
+        <label>Dodaj nowy budynek:
+            <input type="submit" value="Dodaj budynek"/>
+        </label>
+    </form>
+    <br/>
+    <p>Usuń budynek:</p>
+    <form method="post" action="/buildings/delete-building">
+        <label>Dla budynku:
+            <input type="number" name="buildingId"/>
+        </label>
+        <label>
+            <input type="submit" value="Potwierdź usunięcie"/>
+        </label>
+    </form>
+    <br/>
+    <p>Dodaj mieszkanie do budynku:</p>
+    <form method="post" action="/buildings/add-flat">
+        <label>Dla budynku:
+            <input type="number" name="buildingId"/>
+        </label>
+        <label>Czynsz miesięczny w PLN:
+            <input type="number" name="cost"/>
+        </label>
+        <label>
+            <input type="submit" value="Dodaj mieszkanie"/>
+        </label>
+    </form>
+    <br/>
+    <p>Usuń mieszkanie:</p>
+    <form method="post" action="/flats/delete-flat">
+        <label>Dla mieszkania:
+            <input type="number" name="flatId"/>
+        </label>
+        <label>
+            <input type="submit" value="Usuń mieszkanie"/>
+        </label>
+    </form>
+    <br/>
+    <p>Dodaj lokatora do mieszkania:</p>
+    <form method="post" action="/flats/add-locator">
+        <label>Dla mieszkania:
+            <input type="number" name="flatId"/>
+        </label>
+        <label>Imię:
+            <input type="text" name="name"/>
+        </label>
+        <label>Nazwisko:
+            <input type="text" name="surname"/>
+        </label>
+        <label>Adres e-mail:
+            <input type="text" name="mail"/>
+        </label>
+        <label>
+            <input type="submit" value="Dodaj lokatora"/>
+        </label>
+    </form>
+    <br/>
+    <p>Usuń lokatora:</p>
+    <form method="post" action="/locators/delete-locator">
+        <label>Dla mieszkania:
+            <input type="number" name="locatorId"/>
+        </label>
+        <label>
+            <input type="submit" value="Usuń lokatora"/>
+        </label>
+    </form>
+    <br/>
+    <p>Wysyłanie maili z przypomnieniem:</p>
+    <form method="post" action="/emails/send">
+        <label>Do:
+            <input type="text" name="to"/>
+        </label>
+        <label>Temat wiadomości:
+            <input type="text" name="subject"/>
+        </label>
+        <label>Treść:
+            <input type="text" name="text"/>
+        </label>
+        <label>
+            <input type="submit" value="Wyślij email"/>
+        </label>
+    </form>
+    <br/>
+    <p>Wystawianie faktury:</p>
+    <form method="post" action="/locators/invoice">
+        <label>Dla lokatora:
+            <input type="number" name="locatorId"/>
+        </label>
+        <label>
+            <input type="submit" value="Wystaw fakture"/>
+        </label>
+    </form>
+</body>
+</html>
