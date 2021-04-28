@@ -1,6 +1,6 @@
-package com.ttpsc.zadanie.model.repositories;
+package com.ttpsc.flats_management.model.repositories;
 
-import com.ttpsc.zadanie.model.entities.Flat;
+import com.ttpsc.flats_management.model.entities.Flat;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface FlatsRepo extends JpaRepository<Flat, Long> {

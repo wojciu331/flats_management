@@ -1,6 +1,6 @@
-package com.ttpsc.zadanie.model.entities;
+package com.ttpsc.flats_management.model.entities;
 
-import com.ttpsc.zadanie.enums.FlatStatus;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,20 +14,17 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 public class Flat {
-    public Flat(FlatStatus status){
-        this.status = status;
-    }
-
     @Id
     @GeneratedValue
     private Long id;
 
-    private FlatStatus status;
+    private boolean is_vacant = true;
     private Long rentCost;
 
     @JoinColumn
     @ManyToOne
-    Building building = new Building();
+    @JsonBackReference
+    private Building building;
 
     @OneToMany
     private List<Locator> locators = new ArrayList<>();

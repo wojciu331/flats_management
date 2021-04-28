@@ -1,4 +1,4 @@
-package com.ttpsc.zadanie.controllers;
+package com.ttpsc.flats_management.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

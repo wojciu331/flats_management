@@ -1,5 +1,6 @@
-package com.ttpsc.zadanie.model.entities;
+package com.ttpsc.flats_management.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -17,10 +18,14 @@ public class Building {
     @GeneratedValue
     private Long id;
 
+    private String address;
+    private String zip_code;
+
     public List<Flat> getFlats() {
         return flats;
     }
 
     @OneToMany
+    @JsonManagedReference
     private List<Flat> flats = new ArrayList<>();
 }

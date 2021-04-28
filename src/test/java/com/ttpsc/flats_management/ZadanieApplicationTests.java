@@ -1,4 +1,4 @@
-package com.ttpsc.zadanie;
+package com.ttpsc.flats_management;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

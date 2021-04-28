@@ -1,4 +1,4 @@
-package com.ttpsc.zadanie;
+package com.ttpsc.flats_management.configuration;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

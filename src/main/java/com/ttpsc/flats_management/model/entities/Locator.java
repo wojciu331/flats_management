@@ -1,12 +1,11 @@
-package com.ttpsc.zadanie.model.entities;
+package com.ttpsc.flats_management.model.entities;
 
+import com.ttpsc.flats_management.model.entities.Flat;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Getter
@@ -17,15 +16,10 @@ public class Locator {
     @GeneratedValue
     private Long id;
 
-    public Locator(String name, String surname) {
-        this.name = name;
-        this.surname = surname;
-    }
-
     private String name;
     private String surname;
     private String mail;
-    private Boolean paid;
+    private Boolean paid = false;
 
     @JoinColumn
     @ManyToOne

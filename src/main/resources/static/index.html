@@ -6,14 +6,21 @@
 </head>
 <body>
     <h1>Panel administratora. Wybierz opcję zarządzania mieszkaniami.</h1>
-    <form method="post" action="/buildings/create-building">
-        <label>Dodaj nowy budynek:
+    <p>Dodaj nowy budynek:</p>
+    <form method="post" action="/buildings/create">
+        <label>Ulica:
+            <input type="text" name="address"/>
+        </label>
+        <label>Kod pocztowy:
+            <input type="text" name="zip_code"/>
+        </label>
+        <label>
             <input type="submit" value="Dodaj budynek"/>
         </label>
     </form>
     <br/>
     <p>Usuń budynek:</p>
-    <form method="post" action="/buildings/delete-building">
+    <form method="delete" action="/buildings/delete">
         <label>Dla budynku:
             <input type="number" name="buildingId"/>
         </label>
@@ -23,7 +30,7 @@
     </form>
     <br/>
     <p>Dodaj mieszkanie do budynku:</p>
-    <form method="post" action="/buildings/add-flat">
+    <form method="post" action="/flats/add">
         <label>Dla budynku:
             <input type="number" name="buildingId"/>
         </label>
@@ -36,7 +43,7 @@
     </form>
     <br/>
     <p>Usuń mieszkanie:</p>
-    <form method="post" action="/flats/delete-flat">
+    <form method="delete" action="/flats/delete">
         <label>Dla mieszkania:
             <input type="number" name="flatId"/>
         </label>
@@ -46,7 +53,7 @@
     </form>
     <br/>
     <p>Dodaj lokatora do mieszkania:</p>
-    <form method="post" action="/flats/add-locator">
+    <form method="post" action="/locators/add">
         <label>Dla mieszkania:
             <input type="number" name="flatId"/>
         </label>
@@ -65,28 +72,12 @@
     </form>
     <br/>
     <p>Usuń lokatora:</p>
-    <form method="post" action="/locators/delete-locator">
+    <form method="delete" action="/locators/delete">
         <label>Dla mieszkania:
             <input type="number" name="locatorId"/>
         </label>
         <label>
             <input type="submit" value="Usuń lokatora"/>
-        </label>
-    </form>
-    <br/>
-    <p>Wysyłanie maili z przypomnieniem:</p>
-    <form method="post" action="/emails/send">
-        <label>Do:
-            <input type="text" name="to"/>
-        </label>
-        <label>Temat wiadomości:
-            <input type="text" name="subject"/>
-        </label>
-        <label>Treść:
-            <input type="text" name="text"/>
-        </label>
-        <label>
-            <input type="submit" value="Wyślij email"/>
         </label>
     </form>
     <br/>
