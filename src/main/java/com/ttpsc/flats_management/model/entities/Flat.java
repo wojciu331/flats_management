@@ -1,6 +1,7 @@
 package com.ttpsc.flats_management.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -27,5 +28,6 @@ public class Flat {
     private Building building;
 
     @OneToMany
+    @JsonManagedReference
     private List<Locator> locators = new ArrayList<>();
 }

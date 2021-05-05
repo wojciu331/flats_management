@@ -1,5 +1,6 @@
 package com.ttpsc.flats_management.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.ttpsc.flats_management.model.entities.Flat;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,5 +24,6 @@ public class Locator {
 
     @JoinColumn
     @ManyToOne
+    @JsonBackReference
     Flat flat = new Flat();
 }
