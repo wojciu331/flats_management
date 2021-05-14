@@ -5,7 +5,8 @@
     <title>Aplikacja do zarządzania wspólnotami mieszkaniowymi</title>
 </head>
 <body>
-    <h1>Panel administratora. Wybierz opcję zarządzania mieszkaniami.</h1>
+    <h1>Panel administratora. Wybierz opcję zarządzania.</h1>
+    <h2>Zarządzanie budynkami:</h2>
     <p>Dodaj nowy budynek:</p>
     <form method="post" action="/buildings/create">
         <label>Ulica:
@@ -19,6 +20,16 @@
         </label>
     </form>
     <br/>
+    <p>Czynsze mieszkań w konkretnym budynku:</p>
+    <form method="get" action="/buildings/rent-costs">
+        <label>Dla budynku:
+            <input type="number" name="buildingId"/>
+        </label>
+        <label>
+            <input type="submit" value="Szukaj"/>
+        </label>
+    </form>
+    <br/>
     <p>Usuń budynek:</p>
     <form method="delete" action="/buildings/delete">
         <label>Dla budynku:
@@ -29,6 +40,7 @@
         </label>
     </form>
     <br/>
+    <h2>Zarządzanie mieszkaniami:</h2>
     <p>Dodaj mieszkanie do budynku:</p>
     <form method="post" action="/flats/add">
         <label>Dla budynku:
@@ -42,6 +54,13 @@
         </label>
     </form>
     <br/>
+    <p>Wyszukaj dostępne mieszkania:</p>
+        <form method="get" action="/flats/available">
+            <label>
+                <input type="submit" value="Szukaj"/>
+            </label>
+        </form>
+    <br/>
     <p>Usuń mieszkanie:</p>
     <form method="delete" action="/flats/delete">
         <label>Dla mieszkania:
@@ -52,6 +71,7 @@
         </label>
     </form>
     <br/>
+    <h2>Zarządzanie lokatorami:</h2>
     <p>Dodaj lokatora do mieszkania:</p>
     <form method="post" action="/locators/add">
         <label>Dla mieszkania:
@@ -73,7 +93,7 @@
     <br/>
     <p>Usuń lokatora:</p>
     <form method="delete" action="/locators/delete">
-        <label>Dla mieszkania:
+        <label>Dla lokatora:
             <input type="number" name="locatorId"/>
         </label>
         <label>

@@ -22,7 +22,7 @@ public class FlatsController {
         return this.flatsService.addFlatToBuilding(new NewFlatDto(buildingId, true, cost));
     }
 
-    @DeleteMapping("/delete")
+    @GetMapping("/delete")
     public Flat deleteFlat(@RequestParam(value = "flatId") Long flatId) {
         return this.flatsService.deleteFlat(flatId);
     }

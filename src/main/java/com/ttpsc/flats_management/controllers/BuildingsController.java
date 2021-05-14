@@ -22,7 +22,7 @@ public class BuildingsController {
         return this.buildingsService.createNewBuilding(new NewBuildingDto(address, zip_code));
     }
 
-    @DeleteMapping("/delete")
+    @GetMapping("/delete")
     public Building deleteBuilding(@RequestParam(value = "buildingId") Long buildingId){
         return this.buildingsService.deleteBuilding(buildingId);
     }
@@ -37,9 +37,9 @@ public class BuildingsController {
         return this.buildingsService.findOne(id).orElse(null);
     }
 
-    @GetMapping("/{id}-rent-costs")
-    public List<Long> getPayments(@PathVariable Long id){
-        return this.buildingsService.findPayments(id);
+    @GetMapping("/rent-costs")
+    public List<Long> getPayments(@RequestParam(value = "buildingId") Long buildingId){
+        return this.buildingsService.findPayments(buildingId);
     }
 
     @AllArgsConstructor

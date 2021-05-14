@@ -26,7 +26,7 @@ public class LocatorsController {
         return this.locatorService.AddLocatorToFlat(new NewLocatorDto(flatId, name, surname, mail, false));
     }
 
-    @DeleteMapping("/delete")
+    @GetMapping("/delete")
     public Locator deleteLocator(@RequestParam(value = "locatorId") Long locatorId){
         return this.locatorService.deleteLocator(locatorId);
     }
