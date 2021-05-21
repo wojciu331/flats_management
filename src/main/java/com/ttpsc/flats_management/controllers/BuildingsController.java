@@ -23,8 +23,8 @@ public class BuildingsController {
     }
 
     @GetMapping("/delete")
-    public Building deleteBuilding(@RequestParam(value = "buildingId") Long buildingId){
-        return this.buildingsService.deleteBuilding(buildingId);
+    public void deleteBuilding(@RequestParam(value = "buildingId") Long buildingId){
+        this.buildingsService.deleteBuilding(buildingId);
     }
 
     @GetMapping("/all")

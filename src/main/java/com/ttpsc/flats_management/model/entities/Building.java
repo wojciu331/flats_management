@@ -21,11 +21,7 @@ public class Building {
     private String address;
     private String zip_code;
 
-    public List<Flat> getFlats() {
-        return flats;
-    }
-
-    @OneToMany
+    @OneToMany(cascade= {CascadeType.PERSIST, CascadeType.REMOVE})
     @JsonManagedReference
     private List<Flat> flats = new ArrayList<>();
 }

@@ -22,7 +22,6 @@ public class Flat {
     private boolean is_vacant = true;
     private Long rentCost;
 
-    @JoinColumn
     @ManyToOne
     @JsonBackReference
     private Building building;

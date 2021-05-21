@@ -24,10 +24,10 @@ public class BuildingsService {
         return building;
     }
 
-    public Building deleteBuilding(Long buildingId) {
-        Building building = this.buildingsRepo.findById(buildingId).orElse(null);
-       if(building != null) this.buildingsRepo.deleteById(buildingId);
-       return building;
+    public void deleteBuilding(Long buildingId) {
+        //Building building = this.buildingsRepo.findById(buildingId).orElse(null);
+       this.buildingsRepo.deleteById(buildingId);
+       //return building;
     }
 
     public List<Building> findAll() {
